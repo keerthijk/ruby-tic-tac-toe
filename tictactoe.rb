@@ -16,6 +16,7 @@ class TicTacToe
     @user2 = User.new('User2')
     @current_user = @user1play
   end
+
   def play
     until winner?
       print "#{@current_user.name}, choose a number from 1-9: "
@@ -24,6 +25,7 @@ class TicTacToe
     end
     puts "The winner is, #{winner?.name}"
   end
+  
   def winner?
     return @user1 if @winning_sets.any? { |w| w.subset?(@user1.answers) }
     return @user2 if @winning_sets.any? { |w| w.subset?(@user2.answers) }
